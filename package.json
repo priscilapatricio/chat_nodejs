@@ -1,0 +1,25 @@
+{
+  "name": "chat_nodejs",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r   <a href=\"#-tecnologias\">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;\r   <a href=\"#-projeto\">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;\r   <a href=\"#-como-rodar\">Como rodar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;\r   <a href=\"#-como-contribuir\">Como contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;\r   <a href=\"#-licença\">Licença</a>&nbsp;&nbsp;&nbsp;\r   </p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priscilapatricio/chat_nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/priscilapatricio/chat_nodejs/issues"
+  },
+  "homepage": "https://github.com/priscilapatricio/chat_nodejs#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "socket.io": "^3.1.1"
+  }
+}
