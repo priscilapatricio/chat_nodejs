@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat da Casa de Repouso</title>
+    <title>Chat</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js"></script>
@@ -22,6 +22,20 @@
     <script type="text/javascript">
     var socket = io('http://localhost:3000');
 
+    function renderMessage(message) {
+        $('.messages').append('<div class="message"><strong>'+ message.author +'</strong>: '+ message.message +' </div>');
+    }
+
+    socket.on('previousMessages', function(messages) {
+        for (message of messages) {
+            renderMessage(message);
+        }
+    });
+
+    socket.on('receivedMessage', function(message) {
+        renderMessage(message);
+    });
+
     $('#chat').submit(function(event) {
         event.preventDefault();
 
@@ -33,6 +47,8 @@
                 author: author,
                 message: message,
             };
+
+            renderMessage(messageObject);
 
             socket.emit('sendMessage', messageObject);
         }
